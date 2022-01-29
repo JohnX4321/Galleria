@@ -58,7 +58,10 @@ class MainActivity : AppCompatActivity() {
         }
     }
 
-
+    override fun onStart() {
+        super.onStart()
+        viewModel.loadItems()
+    }
 
     override fun onRequestPermissionsResult(
         requestCode: Int,
