@@ -1,0 +1,49 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    app:startDestination="@id/bottomNavFrag"
+    android:id="@+id/nav_graph">
+
+    <fragment
+        android:id="@+id/bottomNavFrag"
+        android:name="com.tzapps.galleria.fragments.BottomNavFragment"
+        android:label="fragment_bottom_nav"
+        tools:layout="@layout/layout_fragment_nav" >
+        <action
+            android:id="@+id/action_bottomNavFrag_to_viewPagerFrag"
+            app:destination="@id/viewPagerFrag" />
+        <action
+            android:id="@+id/action_bottomNavFrag_to_albumDetailFrag"
+            app:destination="@id/albumDetailFrag" />
+    </fragment>
+    <fragment
+        android:id="@+id/viewPagerFrag"
+        android:name="com.tzapps.galleria.fragments.ImageViewerFragment"
+        android:label="fragment_view_pager"
+        tools:layout="@layout/layout_fragment_pager" >
+        <argument
+            android:name="isAlbum"
+            app:argType="boolean"
+            android:defaultValue="false" />
+    </fragment>
+    <fragment
+        android:id="@+id/albumDetailFrag"
+        android:name="com.tzapps.galleria.fragments.AlbumDetailFragment"
+        android:label="fragment_album_detail"
+        tools:layout="@layout/layout_fragment_album" >
+        <action
+            android:id="@+id/action_albumDetailFrag_to_viewPagerFrag"
+            app:destination="@id/viewPagerFrag" />
+    </fragment>
+
+    <fragment
+        android:id="@+id/settingsFrag"
+        android:name="com.tzapps.galleria.fragments.SettingsFragment"
+        android:label="fragment_settings" >
+        <action
+            android:id="@+id/action_settingsFrag_to_bottomNavFrag"
+            app:destination="@id/bottomNavFrag" />
+    </fragment>
+
+</navigation>

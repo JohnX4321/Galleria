@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="utf-8"?>
+<PreferenceScreen xmlns:android="http://schemas.android.com/apk/res/android">
+
+    <PreferenceCategory>
+        <SwitchPreference
+            android:title="Enable Trash (Alpha)"
+            android:summary="For Android R(11)+ devices, Prompt will be asked everytime"
+            android:key="deletePref" />
+    </PreferenceCategory>
+
+</PreferenceScreen>

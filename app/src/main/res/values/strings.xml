@@ -1,0 +1,4 @@
+<resources>
+    <string name="app_name">Galleria</string>
+    <string name="permission_list"><![CDATA[Permission Checklist \n\n READ_EXTERNAL_STORAGE -> Read Media Files \n WRITE_EXTERNAL_STORAGE -> Delete or Edit Media Files \n MANAGE_EXTERNAL_STORAGE -> Read and write Media Files in Android R(11)+ devices \n CAMERA -> For capturing Images (optional)]]></string>
+</resources>
