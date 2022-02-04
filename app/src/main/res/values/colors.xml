@@ -10,4 +10,6 @@
 
     <color name="black_rich_fogra">#060207</color>
     <color name="gainsboro">#e1e3e4</color>
+
+    <color name="colorButtonGreyBg">#444444</color>
 </resources>

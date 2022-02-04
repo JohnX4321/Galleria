@@ -21,6 +21,7 @@ import com.google.android.material.transition.Hold
 import com.google.android.material.transition.MaterialSharedAxis
 import com.tzapps.galleria.MainActivity
 import com.tzapps.galleria.R
+import com.tzapps.galleria.activities.CameraActivity
 import com.tzapps.galleria.activities.InfoActivity
 import com.tzapps.galleria.adapters.GridItemAdapter
 import com.tzapps.galleria.databinding.LayoutFragmentNavBinding
@@ -88,6 +89,9 @@ class BottomNavFragment: Fragment() {
                         }
                         findViewById<ImageButton>(R.id.item_info)!!.setOnClickListener {
                             startActivity(Intent(requireContext(),InfoActivity::class.java))
+                        }
+                        findViewById<ImageButton>(R.id.item_camera)!!.setOnClickListener {
+                            startActivity(Intent(requireContext(),CameraActivity::class.java))
                         }
                     }
                     bottomSheetDialog.setOnDismissListener {

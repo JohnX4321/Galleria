@@ -3,14 +3,23 @@
   <component name="DesignSurface">
     <option name="filePathToZoomLevelMap">
       <map>
+        <entry key="VideoPlayer/src/main/res/layout/activity_main.xml" value="0.2387588500976562" />
+        <entry key="VideoPlayer/src/main/res/layout/activity_player.xml" value="0.18118466898954705" />
+        <entry key="VideoPlayer/src/main/res/layout/subtitle_selection_dialog.xml" value="0.15520833333333334" />
         <entry key="app/src/main/res/drawable-night/rounded_dialog.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable-v24/ic_launcher_foreground.xml" value="0.1" />
+        <entry key="app/src/main/res/drawable/bg_options.xml" value="0.114" />
         <entry key="app/src/main/res/drawable/ic_baseline_menu_24.xml" value="0.1015" />
         <entry key="app/src/main/res/drawable/rounded_dialog.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/activity_camera.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_info.xml" value="0.25" />
         <entry key="app/src/main/res/layout/activity_main.xml" value="0.1" />
         <entry key="app/src/main/res/layout/activity_permissions.xml" value="0.2966485507246377" />
         <entry key="app/src/main/res/layout/layout_album_grid.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_camera_fragment.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_camera_fragment_preview.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_camera_fragment_video.xml" value="0.1" />
+        <entry key="app/src/main/res/layout/layout_camera_item_picture.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_dialog_details.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/layout/layout_fragment_album.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_fragment_nav.xml" value="0.165" />
@@ -23,6 +32,7 @@
         <entry key="app/src/main/res/layout/layout_item_media.xml" value="0.1" />
         <entry key="app/src/main/res/layout/layout_menu_dialog.xml" value="0.2246376811594203" />
         <entry key="app/src/main/res/menu/menu_bottom_nav.xml" value="0.1" />
+        <entry key="app/src/main/res/menu/menu_main.xml" value="0.1" />
         <entry key="app/src/main/res/xml/preference_settings.xml" value="0.25" />
       </map>
     </option>

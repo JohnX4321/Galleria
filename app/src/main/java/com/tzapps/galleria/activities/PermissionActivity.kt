@@ -19,7 +19,7 @@ import com.tzapps.galleria.databinding.ActivityPermissionsBinding
 class PermissionActivity: AppCompatActivity() {
 
     private lateinit var binding: ActivityPermissionsBinding
-    private val permList = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA)
+    private val permList = arrayOf(Manifest.permission.READ_EXTERNAL_STORAGE,Manifest.permission.WRITE_EXTERNAL_STORAGE,Manifest.permission.CAMERA,Manifest.permission.RECORD_AUDIO)
     override fun onCreate(savedInstanceState: Bundle?) {
         super.onCreate(savedInstanceState)
         binding= ActivityPermissionsBinding.inflate(layoutInflater)
@@ -30,7 +30,7 @@ class PermissionActivity: AppCompatActivity() {
         }
     }
 
-    val managerStorageResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) {r->
+    private val managerStorageResultLauncher = registerForActivityResult(ActivityResultContracts.StartActivityForResult()) { r->
         if (r.resultCode==Activity.RESULT_OK) {
             if (haveStoragePerm()) {
                 startMainActivity()

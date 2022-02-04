@@ -16,6 +16,7 @@ package com.tzapps.galleria.adapters
  * limitations under the License.
  */
 
+import android.content.Intent
 import android.graphics.drawable.Drawable
 import android.os.Bundle
 import android.provider.MediaStore
@@ -45,6 +46,9 @@ import com.tzapps.galleria.databinding.LayoutItemMediaBinding
 import com.tzapps.galleria.fragments.AlbumDetailFragment
 import com.tzapps.galleria.fragments.BottomNavFragment
 import com.tzapps.galleria.models.ListItem
+import com.tzapps.videoplayer.PlayerActivity
+import com.tzapps.videoplayer.db.SingleVideo
+import com.tzapps.videoplayer.db.VideoSource
 import java.text.SimpleDateFormat
 import java.util.*
 import java.util.concurrent.atomic.AtomicBoolean
@@ -118,16 +122,17 @@ class GridItemAdapter(val frag: Fragment, val isAlbum: Boolean): ListAdapter<Lis
 
         fun onBind(position: Int) {
             binding.image.isActivated = tracker.isSelected(itemId)
+            val obj = getItem(position) as ListItem.MediaItem
             if (binding.image.isActivated) {
                 binding.image.shapeAppearanceModel = ShapeAppearanceModel().withCornerSize(70f)
             } else {
                 binding.image.shapeAppearanceModel = ShapeAppearanceModel().withCornerSize(0f)
             }
 
-            binding.image.transitionName = (getItem(layoutPosition) as ListItem.MediaItem).id.toString()
+            binding.image.transitionName = obj.id.toString()
             Glide.with(frag.requireActivity()).
-            load((getItem(position) as ListItem.MediaItem).uri)
-                .signature(MediaStoreSignature("", (getItem(position)as ListItem.MediaItem).dateModified, 0))
+            load(obj.uri)
+                .signature(MediaStoreSignature("", obj.dateModified, 0))
                 .thumbnail(0.2f)
                 .listener(object : RequestListener<Drawable?> {
                     override fun onLoadFailed(
@@ -172,7 +177,14 @@ class GridItemAdapter(val frag: Fragment, val isAlbum: Boolean): ListAdapter<Lis
                 MainActivity.currentPagerPos = if (isAlbum){
                     layoutPosition
                 } else {
-                    (getItem(layoutPosition) as ListItem.MediaItem).pagerPosition
+                    obj.pagerPosition
+                }
+
+                if (obj.type==MediaStore.Files.FileColumns.MEDIA_TYPE_VIDEO) {
+                    frag.startActivity(Intent(frag.requireContext(),PlayerActivity::class.java).apply {
+                        //putParcelableArrayListExtra("videoSource",VideoSource(listOf(VideoSource.SingleVideo())))
+                        putExtra("videoSource",SingleVideo(obj.uri))
+                    })
                 }
 
                 val extras = FragmentNavigatorExtras(it to it.transitionName)
